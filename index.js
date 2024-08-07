@@ -14,11 +14,11 @@ const input = document.getElementById("typing");
 const log = document.getElementById("log");
 const resets = document.getElementById("reset");
 const resetBox = document.getElementById("reset-box");
-const redos = document.getElementById("redo");
-const redoBox = documnet.getElementById("redo-box");
+//const redos = document.getElementById("redo");
+//const redoBox = documnet.getElementById("redo-box");
 
 textChoice.textContent = textList[Math.floor(random())];
-var size = textChoice.textContent.length
+var size = textChoice.textContent.length;
 var count = 0;
 
 input.addEventListener("keydown", textCheck);
