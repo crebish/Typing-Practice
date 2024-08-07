@@ -1,4 +1,4 @@
-const textList = ["the quick brown fox jumps over the lazy dog", 
+const textList = ["ins quick brown fox jumps over the lazy dog", 
     "the view from the lighthouse excited even the most seasoned traveler",
     "she opened up her third bottle of wine of the night",
     "the underground bunker was filled with chips and candy",
