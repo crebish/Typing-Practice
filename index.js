@@ -14,8 +14,8 @@ const input = document.getElementById("typing");
 const log = document.getElementById("log");
 const resets = document.getElementById("reset");
 const resetBox = document.getElementById("reset-box");
-//const redos = document.getElementById("redo");
-//const redoBox = documnet.getElementById("redo-box");
+const redos = document.getElementById("redo");
+const redoBox = document.getElementById("redo-box");
 
 textChoice.textContent = textList[Math.floor(random())];
 var size = textChoice.textContent.length;
@@ -32,12 +32,12 @@ function textCheck(e) {
         log.textContent = 'Success';
         input.disabled = true;
         resetBox.style.visibility = 'visible';
-        //redoBox.style.visibility = 'visible';
+        redoBox.style.visibility = 'visible';
     } else if (key !== textChoice.textContent[count]) {
         log.textContent = 'Fail';
         input.disabled = true;
         resetBox.style.visibility = 'visible';
-        //redoBox.style.visibility = 'visible';
+        redoBox.style.visibility = 'visible';
     } else {
         log.textContent += '-';
         count++;
@@ -74,7 +74,7 @@ function redoTP() {
     input.value = "";
     input.disabled = false;
     redos.checked = false;
-    //redoBox.style.visibility = 'hidden';
+    redoBox.style.visibility = 'hidden';
 }
 
 function random() {
