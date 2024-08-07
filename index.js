@@ -20,6 +20,9 @@ const redoBox = document.getElementById("redo-box");
 textChoice.textContent = textList[Math.floor(random())];
 var size = textChoice.textContent.length;
 var count = 0;
+var seconds = 0;
+var miliseconds = 0;
+var timeInterval;
 
 input.addEventListener("keydown", textCheck);
 
@@ -29,20 +32,16 @@ function textCheck(e) {
     key = key.toLowerCase();
 
     if (count >= size - 1 && key == textChoice.textContent[count]) {
-        log.textContent = 'Success';
-        input.disabled = true;
-        resetBox.style.visibility = 'visible';
-        redoBox.style.visibility = 'visible';
+        pauseTimer();
+        log.textContent = 'Success - ' + log.textContent;
+        tryAgain();
     } else if (key !== textChoice.textContent[count]) {
+        pauseTimer();
         log.textContent = 'Fail';
-        input.disabled = true;
-        resetBox.style.visibility = 'visible';
-        redoBox.style.visibility = 'visible';
+        tryAgain();
     } else {
-        log.textContent += '-';
         count++;
     }
-
 }
 
 function checkType(key) {
@@ -57,26 +56,46 @@ function checkType(key) {
     }
 }
 
-function resetTP() {
-    textChoice.textContent = textList[Math.floor(random())];
-    size = textChoice.textContent.length;
-    count = 0;
-    log.textContent = '';
-    input.value = '';
-    input.disabled = false;
-    resets.checked = false;
-    resetBox.style.visibility = 'hidden';
-    redoBox.style.visibility = 'hidden';
+function tryAgain() {
+    input.disabled = true;
+    resetBox.style.visibility = 'visible';
+    redoBox.style.visibility = 'visible';
 }
 
-function redoTP() {
+function newTP() {
+    textChoice.textContent = textList[Math.floor(random())];
+    size = textChoice.textContent.length;
+    reset();
+}
+
+function reset() {
+    seconds = 0;
+    miliseconds = 0;
     count = 0;
-    log.textContent = '';
+    log.textContent = '0s';
     input.value = '';
     input.disabled = false;
     redos.checked = false;
+    resets.checked = false;
     redoBox.style.visibility = 'hidden';
     resetBox.style.visibility = 'hidden';
+}
+
+function beginTimer() {
+    timeInterval = setInterval(setTime, 10);
+}
+
+function setTime() {
+    ++miliseconds;
+    if (miliseconds == 100) {
+        ++seconds;
+        miliseconds = 0;
+    }
+    log.textContent = seconds + '.' + miliseconds + 's';
+}
+
+function pauseTimer() {
+    clearInterval(timeInterval);
 }
 
 function random() {

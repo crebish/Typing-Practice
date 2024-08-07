@@ -14,19 +14,19 @@
     <h2 id="prompt"></h2>
 
 
-    <input class="radio" type="radio" id="javascript" name="practice" />
-        <label for="javascript">Begin</label>
+    <input class="radio" type="radio" id="begin" name="Begin" />
+        <label for="begin" id="begin-box">Begin</label>
 
     <br/>
-    <input id="typing" placeholder="Begin"/>
+    <input id="typing" placeholder="Begin" onclick="beginTimer()"/>
 
     <br/>
 
-    <p id="log"></p>
+    <p id="log">0s</p>
 
-    <input type="radio" class="radio" name="Try Again?" id="reset" onclick="resetTP()">
+    <input type="radio" class="radio" name="New Sentence" id="reset" onclick="newTP()">
         <label for="reset" id="reset-box">New Sentence</label>
-    <input type="radio" class="radio" name="Try Again?" id="redo" onclick="redoTP()">
+    <input type="radio" class="radio" name="Retry" id="redo" onclick="reset()">
         <label for="redo" id="redo-box">Retry</label>
 
     <script src="index.js"></script>
