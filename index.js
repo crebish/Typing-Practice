@@ -57,7 +57,7 @@ function checkType(key) {
     }
 }
 
-function reset() {
+function resetTP() {
     textChoice.textContent = textList[Math.floor(random())];
     size = textChoice.textContent.length;
     count = 0;
