@@ -66,6 +66,7 @@ function resetTP() {
     input.disabled = false;
     resets.checked = false;
     resetBox.style.visibility = 'hidden';
+    redoBox.style.visibility = 'hidden';
 }
 
 function redoTP() {
@@ -75,6 +76,7 @@ function redoTP() {
     input.disabled = false;
     redos.checked = false;
     redoBox.style.visibility = 'hidden';
+    resetBox.style.visibility = 'hidden';
 }
 
 function random() {
