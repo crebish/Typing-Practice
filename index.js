@@ -12,10 +12,10 @@ const textList = ["the quick brown fox jumps over the lazy dog",
 const textChoice = document.getElementById("prompt");
 const input = document.getElementById("typing");
 const log = document.getElementById("log");
-const reset = document.getElementById("reset");
+const resets = document.getElementById("reset");
 const resetBox = document.getElementById("reset-box");
-const redo = document.getElementById("redo");
-const redoBox = documnet.getElementById("redo-box");
+//const redos = document.getElementById("redo");
+//const redoBox = documnet.getElementById("redo-box");
 
 textChoice.textContent = textList[Math.floor(random())];
 var size = textChoice.textContent.length
@@ -31,11 +31,13 @@ function textCheck(e) {
     if (count >= size - 1 && key == textChoice.textContent[count]) {
         log.textContent = 'Success';
         input.disabled = true;
-        redoBox.style.visibility = 'visible';
+        resetBox.style.visibility = 'visible';
+        //redoBox.style.visibility = 'visible';
     } else if (key !== textChoice.textContent[count]) {
         log.textContent = 'Fail';
         input.disabled = true;
-        redoBox.style.visibility = 'visible';
+        resetBox.style.visibility = 'visible';
+        //redoBox.style.visibility = 'visible';
     } else {
         log.textContent += '-';
         count++;
@@ -62,18 +64,18 @@ function reset() {
     log.textContent = '';
     input.value = "";
     input.disabled = false;
-    reset.checked = false;
+    resets.checked = false;
     resetBox.style.visibility = 'hidden';
 }
 
-function redo() {
+/*function redo() {
     count = 0;
     log.textContent = '';
     input.value = "";
     input.disabled = false;
-    redo.checked = false;
+    redos.checked = false;
     redoBox.style.visibility = 'hidden';
-}
+}*/
 
 function random() {
     return Math.random() * 10;
