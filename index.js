@@ -12,8 +12,10 @@ const textList = ["the quick brown fox jumps over the lazy dog",
 const textChoice = document.getElementById("prompt");
 const input = document.getElementById("typing");
 const log = document.getElementById("log");
+const reset = document.getElementById("reset");
+const resetBox = document.getElementById("reset-box");
 const redo = document.getElementById("redo");
-const redoBox = document.getElementById("redo-box");
+const redoBox = documnet.getElementById("redo-box");
 
 textChoice.textContent = textList[Math.floor(random())];
 var size = textChoice.textContent.length
@@ -22,7 +24,6 @@ var count = 0;
 input.addEventListener("keydown", textCheck);
 
 function textCheck(e) {
-
     var key = `${e.code}`;
     key = checkType(key);
     key = key.toLowerCase();
@@ -57,6 +58,15 @@ function checkType(key) {
 function reset() {
     textChoice.textContent = textList[Math.floor(random())];
     size = textChoice.textContent.length;
+    count = 0;
+    log.textContent = '';
+    input.value = "";
+    input.disabled = false;
+    reset.checked = false;
+    resetBox.style.visibility = 'hidden';
+}
+
+function redo() {
     count = 0;
     log.textContent = '';
     input.value = "";
