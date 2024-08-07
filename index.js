@@ -1,4 +1,4 @@
-const textList = ["ins quick brown fox jumps over the lazy dog", 
+const textList = ["the quick brown fox jumps over the lazy dog", 
     "the view from the lighthouse excited even the most seasoned traveler",
     "she opened up her third bottle of wine of the night",
     "the underground bunker was filled with chips and candy",
@@ -32,12 +32,12 @@ function textCheck(e) {
         log.textContent = 'Success';
         input.disabled = true;
         resetBox.style.visibility = 'visible';
-        redoBox.style.visibility = 'visible';
+        //redoBox.style.visibility = 'visible';
     } else if (key !== textChoice.textContent[count]) {
         log.textContent = 'Fail';
         input.disabled = true;
         resetBox.style.visibility = 'visible';
-        redoBox.style.visibility = 'visible';
+        //redoBox.style.visibility = 'visible';
     } else {
         log.textContent += '-';
         count++;
@@ -74,7 +74,7 @@ function redoTP() {
     input.value = "";
     input.disabled = false;
     redos.checked = false;
-    redoBox.style.visibility = 'hidden';
+    //redoBox.style.visibility = 'hidden';
 }
 
 function random() {
