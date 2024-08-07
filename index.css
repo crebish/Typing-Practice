@@ -43,6 +43,7 @@ h1 {
 
 #reset-box {
     visibility: hidden;
+    width: 50%;
 }
 
 #redo:checked + label {
@@ -54,6 +55,7 @@ h1 {
 
 #redo-box {
     visibility: hidden;
+    width: 50%;
 }
 
 .radio {
