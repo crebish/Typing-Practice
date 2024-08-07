@@ -62,7 +62,7 @@ function resetTP() {
     size = textChoice.textContent.length;
     count = 0;
     log.textContent = '';
-    input.value = "";
+    input.value = '';
     input.disabled = false;
     resets.checked = false;
     resetBox.style.visibility = 'hidden';
@@ -72,7 +72,7 @@ function resetTP() {
 function redoTP() {
     count = 0;
     log.textContent = '';
-    input.value = "";
+    input.value = '';
     input.disabled = false;
     redos.checked = false;
     redoBox.style.visibility = 'hidden';
